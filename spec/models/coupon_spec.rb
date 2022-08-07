@@ -9,6 +9,7 @@ RSpec.describe Coupon, type: :model do
   it { is_expected.to validate_presence_of(:discount_value) }
   it { is_expected.to validate_numericality_of(:discount_value).is_greater_than(0) }
 
+  # custon tests using the custon validator furute_date
   it 'can not have past date as due_date' do
     subject.due_date = 1.day.ago
     subject.valid?

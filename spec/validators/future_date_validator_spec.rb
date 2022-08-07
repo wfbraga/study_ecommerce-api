@@ -2,6 +2,7 @@
 
 require "rails_helper"
 
+# we create this class here so it can be the subject to test the custon validator
 class Validator
   include ActiveModel::Validations
   attr_accessor :date
