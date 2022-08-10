@@ -6,7 +6,6 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :image, presence: true
 
-
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories
   has_one_attached :image

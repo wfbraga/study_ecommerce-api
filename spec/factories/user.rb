@@ -3,11 +3,12 @@
 require 'securerandom'
 
 FactoryBot.define do
+  password = Faker::Internet.password
   factory :user do
     name { Faker::Name.name }
     email { Faker::Internet.email }
-    password { Faker::Password.password }
-    password_confirmation { Faker::Password.password_confirmation}
+    password { password }
+    password_confirmation { password }
     profile { %i[admin client].sample }
   end
 end
