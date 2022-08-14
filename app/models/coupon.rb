@@ -7,4 +7,6 @@ class Coupon < ApplicationRecord
   validates :due_date, presence: true, future_date: true
 
   enum status: { inactive: 0, active: 1 }
+
+  include Paginatable
 end
