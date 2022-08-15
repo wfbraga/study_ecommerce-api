@@ -42,7 +42,7 @@ RSpec.describe 'Admin::V1::Categories as :admin', type: :request do
       end
     end
 
-    context 'whit invalid params' do
+    context 'with invalid params' do
       let(:category_invalid_params) do
         { category: attributes_for(:category, name: nil) }.to_json
       end

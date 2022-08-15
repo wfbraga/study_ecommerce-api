@@ -3,6 +3,7 @@ module Admin::V1
     class ForbiddenAccess < StandardError; end
 
     include Authenticable
+    include ModelSavior
     include SimpleErrorRenderable
     self.simple_error_partial = 'shared/simple_error'
 
