@@ -1,6 +1,5 @@
 module Admin::V1
   class CouponsController < ApiController
-    before_action :coupon_params
     def index
       @coupons = Coupon.all
     end
@@ -18,7 +17,6 @@ module Admin::V1
     end
 
     def destroy
-      byebug
       @coupon = Coupon.find(params[:id])
       @coupon.destroy!
     rescue
