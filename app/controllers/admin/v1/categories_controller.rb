@@ -1,7 +1,13 @@
 module Admin::V1
   class CategoriesController < ApiController
+    before_action :load_categories, only: [:update, :destoy]
+    before_action :category_params, only: :show
     def index
-      @categories = Category.all
+      @categories = load_categories
+    end
+
+    def show
+      @category = Category.find(params[:id])
     end
 
     def create
@@ -24,6 +30,11 @@ module Admin::V1
     end
 
     private
+
+    def load_categories
+      permited = params.permit({search: :name}, {order:{}}, :page, :length)
+      Admin::ModelLoadingService.new(Category.all, permited).call
+    end
 
     def category_params
       return {} unless params.has_key?(:category)
