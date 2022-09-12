@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_01_081232) do
+ActiveRecord::Schema.define(version: 2022_09_12_233915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2022_09_01_081232) do
 
   create_table "games", force: :cascade do |t|
     t.integer "mode"
-    t.datetime "resease_date"
+    t.datetime "release_date"
     t.string "developer"
     t.bigint "system_requirement_id", null: false
     t.datetime "created_at", precision: 6, null: false
